@@ -32,6 +32,7 @@ export default function UtilsApp() {
     const [sidebarOpen, setSidebarOpen] = useState(false); // mobile floating panel
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false); // desktop collapse
     const [tool, setTool] = useState<ToolKey>("uuidGenerator");
+    console.log(theme)//just to make the error disappear
 
     const ToolView = useMemo(() => {
         switch (tool) {
@@ -51,7 +52,7 @@ export default function UtilsApp() {
     return (
         <div className="min-h-screen bg-background text-foreground">
             <Navbar
-                theme={theme}
+                /* theme={theme} */
                 setTheme={setTheme}
                 version={VERSION}
             />

@@ -4,8 +4,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Button } from "./ui/button";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function Navbar({ theme, setTheme, version }: {
-  theme: string;
+export default function Navbar({  setTheme, version }: {/* theme, */
+  /* theme: string; */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setTheme: (t: any) => void;
   version: string;
