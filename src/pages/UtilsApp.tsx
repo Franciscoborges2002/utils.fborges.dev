@@ -16,6 +16,9 @@ import useTheme from "../components/useTheme";
 import Footer from "../components/footer";
 import JSONPrettifyTool from "../components/tools/jsonPrettify";
 import ColorConverterTool from "../components/tools/colorConverter";
+import JwtDecoderTool from "../components/tools/jstDecoder";
+import TimestampTool from "../components/tools/timestampConverter";
+import OverviewPage from "../components/overviewPage";
 
 // ---- Theme management (light / dark / system) ----
 // Minimal theme controller that toggles the `class` on <html>
@@ -31,11 +34,19 @@ export default function UtilsApp() {
     const { theme, setTheme } = useTheme();
     const [sidebarOpen, setSidebarOpen] = useState(false); // mobile floating panel
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false); // desktop collapse
-    const [tool, setTool] = useState<ToolKey>("uuidGenerator");
+    const [tool, setTool] = useState<ToolKey>("overview");
     console.log(theme)//just to make the error disappear
 
     const ToolView = useMemo(() => {
         switch (tool) {
+            case "overview":
+                return (
+                    <OverviewPage
+                        tools={TOOLS}
+                        groupOrder={GROUP_ORDER}
+                        onSelectTool={setTool}
+                    />
+                );
             case "manifestGenerator":
                 return <ManifestTool />;
             case "uuidGenerator":
@@ -44,8 +55,16 @@ export default function UtilsApp() {
                 return <JSONPrettifyTool />;
             case "colorConverter":
                 return <ColorConverterTool />;
+            case "jwtDecoder":
+                return <JwtDecoderTool />;
+            case "timestampConverter":
+                return <TimestampTool />;
             default:
-                return <UUIDTool />;
+                return <OverviewPage
+                    tools={TOOLS}
+                    groupOrder={GROUP_ORDER}
+                    onSelectTool={setTool}
+                />
         }
     }, [tool]);
 
@@ -94,7 +113,7 @@ export default function UtilsApp() {
                                         <SidebarNav
                                             tool={tool}
                                             setTool={(t) => { setTool(t); setSidebarOpen(false); }}
-                                            tools={TOOLS} 
+                                            tools={TOOLS}
                                             groupOrder={GROUP_ORDER}
                                         />
                                     </div>
