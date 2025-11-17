@@ -16,7 +16,7 @@ import useTheme from "../components/useTheme";
 import Footer from "../components/footer";
 import JSONPrettifyTool from "../components/tools/jsonPrettify";
 import ColorConverterTool from "../components/tools/colorConverter";
-import JwtDecoderTool from "../components/tools/jstDecoder";
+import JwtDecoderTool from "../components/tools/jwtDecoder";
 import TimestampTool from "../components/tools/timestampConverter";
 import OverviewPage from "../components/overviewPage";
 
