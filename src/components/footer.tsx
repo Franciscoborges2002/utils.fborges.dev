@@ -15,6 +15,12 @@ export default function Footer({ version }: {
                         </Button>
                     </Link></span>
                     <span aria-hidden>•</span>
+                    <Link to="https://github.com/Franciscoborges2002/utils.fborges.dev" target="_blank">
+                        <Button variant={"link"} className="p-0 cursor-pointer text-xs text-muted-foreground font-normal">
+                            github
+                        </Button>
+                    </Link>
+                    <span aria-hidden>•</span>
                     <span>{version}</span>
                 </div>
                 <div className="flex items-center gap-3">

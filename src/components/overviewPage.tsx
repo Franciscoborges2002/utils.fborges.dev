@@ -32,15 +32,6 @@ export default function OverviewPage({ tools, groupOrder, onSelectTool }: Props)
         }));
     }, [tools, groupOrder]);
 
-    const firstTool = React.useMemo(
-        () => tools.find((t) => t.key !== "overview"),
-        [tools]
-    );
-
-    const launchFirst = () => {
-        if (firstTool) onSelectTool(firstTool.key);
-    };
-
     return (
         <div className="space-y-8">
             {/* Hero */}
@@ -52,11 +43,11 @@ export default function OverviewPage({ tools, groupOrder, onSelectTool }: Props)
                     Handpicked utilities I use every day — fast, private, and entirely in your browser.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                    <Button size="lg" onClick={launchFirst}>
-                        Launch utils
+                    <Button size="lg" variant="outline" className="cursor-pointer">
+                        <a href="https://github.com/Franciscoborges2002/utils.fborges.dev">
+                            Github
+                        </a>
                     </Button>
-                    {/* Optional secondary action */}
-                    {/* <Button size="lg" variant="outline">Visit live site</Button> */}
                 </div>
                 <p className="mt-2 text-[11px] text-muted-foreground">
                     Version {VERSION} · Simple and fast to use.

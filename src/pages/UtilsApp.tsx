@@ -19,6 +19,7 @@ import ColorConverterTool from "../components/tools/colorConverter";
 import JwtDecoderTool from "../components/tools/jwtDecoder";
 import TimestampTool from "../components/tools/timestampConverter";
 import OverviewPage from "../components/overviewPage";
+import ResourcesPage from "../components/quicklinksPage";
 
 // ---- Theme management (light / dark / system) ----
 // Minimal theme controller that toggles the `class` on <html>
@@ -46,6 +47,10 @@ export default function UtilsApp() {
                         groupOrder={GROUP_ORDER}
                         onSelectTool={setTool}
                     />
+                );
+            case "resources":
+                return (
+                    <ResourcesPage/>
                 );
             case "manifestGenerator":
                 return <ManifestTool />;

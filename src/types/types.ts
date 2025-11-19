@@ -1,6 +1,6 @@
 import { Braces, CalendarClock, FileBracesCorner, Home, PaintBucket, ShieldUser, Wand2 } from "lucide-react";
 
-export type ToolKey = "overview" | "uuidGenerator" | "manifestGenerator" | "jsonPrettify" | "colorConverter" | "jwtDecoder" | "timestampConverter";
+export type ToolKey = "overview" | "resources" | "uuidGenerator" | "manifestGenerator" | "jsonPrettify" | "colorConverter" | "jwtDecoder" | "timestampConverter";
 
 export type ToolMeta = {
   key: ToolKey;
@@ -12,6 +12,7 @@ export type ToolMeta = {
 
 export const TOOLS: ToolMeta[] = [
   { key: "overview", title: "Overview", icon: Home, description: "" },
+  { key: "resources", title: "Resouces", icon: Home, description: "" },
   /* GENERATORS */
   { key: "jsonPrettify", title: "JSON Prettify", icon: FileBracesCorner, group: "Generators", description: "Pretty-print or minify JSON; edit both sides with instant validation.", },
   { key: "uuidGenerator", title: "UUID v4 Generator", icon: Wand2, group: "Generators", description: "Generate RFC4122-compliant random identifiers with one click.", },
@@ -25,4 +26,4 @@ export const TOOLS: ToolMeta[] = [
 
 export const GROUP_ORDER = ["Converters", "Generators", "Config", "Design", "Decoder"];
 
-export const VERSION = "v1.0.1";
+export const VERSION = "v1.0.2";
